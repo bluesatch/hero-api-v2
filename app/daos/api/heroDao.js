@@ -42,7 +42,13 @@ const heroDao = {
                         powers.push(obj.power)
                     })
                     con.execute(
-                        `SELECT h1.hero_name hero, h2.hero_name rival
+                        `SELECT h1.hero_id, 
+                        CASE WHEN h1.hero_name IS NULL THEN concat(h1.first_name, ' ', h1.last_name)
+                        ELSE h1.hero_name
+                        END hero, 
+                        CASE WHEN h2.hero_name IS NULL THEN concat(h2.first_name, ' ', h2.last_name)
+                        ELSE h2.hero_name
+                        END rival
                         FROM hero_to_rival hr 
                         JOIN hero h1 ON h1.hero_id = hr.hero_id
                         JOIN hero h2 ON h2.hero_id = hr.rival_id
