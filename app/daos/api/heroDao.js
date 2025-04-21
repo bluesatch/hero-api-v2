@@ -94,6 +94,53 @@ const heroDao = {
                 }
             }
         )
+    },
+
+    findByAlignment: (res, table, alignment)=> {
+        con.execute(
+            `SELECT ${table}.hero_id, ${table}.hero_name, ${table}.first_name,
+            ${table}.last_name, ${table}.alias, f.franchise, s.species, 
+            ${table}.place_of_origin, ${table}.first_app, ${table}.alignment, ${table}.img_url
+            FROM ${table}
+            JOIN franchise f USING (franchise_id)
+            JOIN species s USING (species_id)
+            WHERE ${table}.alignment = '${alignment}'
+            ORDER BY ${table}.hero_id;`,
+            (error, rows)=> {
+                if (!error) {
+                    if (rows.length === 1) {
+                        res.json(...rows)
+                    } else {
+                        res.json(rows)
+                    }
+                } else {
+                    console.log(`DAO Error: ${table} `, error)
+                }
+            }
+        )
+    },
+
+    sort: (res, table)=> {
+        con.execute(
+            `SELECT ${table}.hero_id, ${table}.hero_name, ${table}.first_name,
+            ${table}.last_name, ${table}.alias, f.franchise, s.species, 
+            ${table}.place_of_origin, ${table}.first_app, ${table}.alignment, ${table}.img_url
+            FROM ${table}
+            JOIN franchise f USING (franchise_id)
+            JOIN species s USING (species_id)
+            ORDER BY ${table}.hero_name, ${table}.last_name, ${table}.first_name;`,
+            (error, rows)=> {
+                if (!error) {
+                    if (rows.length === 1) {
+                        res.json(...rows)
+                    } else {
+                        res.json(rows)
+                    }
+                } else {
+                    console.log('Hero Dao Error: ', error)
+                }
+            }
+        )
     }
 }
 
