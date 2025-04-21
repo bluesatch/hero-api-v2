@@ -13,6 +13,10 @@ router.get('/alignment/:alignment', (req, res)=> {
     dao.findByAlignment(res, dao.table, req.params.alignment)
 })
 
+router.get('/count', (req, res)=> {
+    dao.countAll(res, dao.table)
+})
+
 // sort 
 router.get('/sort', (req, res)=> {
     dao.sort(res, dao.table)

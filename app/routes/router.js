@@ -10,13 +10,15 @@ router.get('/api', (req, res)=> {
         'Heroes': `http://localhost:${PORT}/api/hero`,
         'Franchises': `http://localhost:${PORT}/api/franchise`,
         'Powers': `http://localhost:${PORT}/api/power`,
-        'Species': `http://locahost:${PORT}/api/species`,
+        'Species': `http://localhost:${PORT}/api/species`,
         'Teams': `http://localhost:${PORT}/api/team`
     })
 })
 
 const endpoints = [
-    'hero'
+    'hero',
+    'power',
+    'species'
 ]
 
 endpoints.forEach(endpoint => {
