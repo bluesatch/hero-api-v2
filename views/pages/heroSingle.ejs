@@ -1,0 +1,63 @@
+<%- include('../partials/header') %>
+
+<main class="main" id="heroSingleMain">
+    <div class="container">
+        <div class="row">
+            <div class="col-5 col-md-7">
+                <figure class="figure hero-single-figure">
+                    <img src="https://placehold.co/250x300" alt="placeholder img" class="img-fluid image w-100 figure-img" />
+                    <%= name %>
+                </figure>
+            </div>
+            <div class="col-7 col-md-5">
+                <% if (data.alias != null) { %>
+                    <h2>Alias: <%= data.alias %></h2>
+                <% } %>
+                <ul class="list-group list-group-flush hero-data-list">
+                    <% if (data.first_name) { %>
+                        <li class="list-group-item hero-data-item">
+                            First: <%= data.first_name %>
+                        </li>
+                    <% } %>
+                    <% if (data.last_name) { %>
+                        <li class="list-group-item hero-data-item">
+                            Last: <%= data.last_name %>
+                        </li>
+                    <% } %>
+                    <li class="list-group-item hero-data-item">
+                        Alignment: <%= data.alignment %>
+                    </li>
+                    <li class="list-group-item hero-data-item">
+                        Species: <%= data.species %>
+                    </li>
+                    <li class="list-group-item hero-data-item">
+                        Place of origin: <%= data.place_of_origin %>
+                    </li>
+                    <li class="list-group-item hero-data-item">
+                        First appearance: <%= data.first_app %>
+                    </li>
+                    <li class="list-group-item hero-data-item">
+                        Powers: 
+
+                        <ul class="powers-list">
+                            <% data.powers.forEach(power => { %>
+                                <li class="power-list-item"><%= power %></li>
+                            <% }) %>
+                        </ul>
+                    </li>
+                    <li class="list-group-item hero-data-item">
+                        Rivals:
+
+                        <ul class="rivals-list">
+                            <% data.rivals.forEach(rival => { %>
+                                <li class="rival-list-item"><%= rival %></li>
+                            <% }) %>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+
+<%- include('../partials/footer') %>
