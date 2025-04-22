@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+
+<main class="main" id="heroMain">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-4 row-cols-lg-5 g-4">
+            <% data.forEach(hero => { %>
+            
+                <div class="col">
+                    <figure class="figure hero-figure">
+                        <img src="https://placehold.co/250x200" alt="placeholder img" class="img-fluid image figure-img w-100" />
+                        <figcaption class="figure-caption">
+                            <% if (hero.hero_name == null) { %>
+                                <%= hero.first_name %> <%= hero.last_name %>
+                            <% } else { %>
+                                <%= hero.hero_name %>
+                            <% } %> | 
+                            <a href="#" class="hero-link">view more</a>
+                        </figcaption>
+                    </figure>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</main>
+
+<%- include('../partials/footer')  %>

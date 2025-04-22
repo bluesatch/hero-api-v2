@@ -1,5 +1,7 @@
 const express = require('express')
 const router = express.Router()
+const axios = require('axios')
+
 const PORT = process.env.PORT || 3000
 
 router.use(express.static('public'))
@@ -25,6 +27,30 @@ const endpoints = [
 
 endpoints.forEach(endpoint => {
     router.use(`/api/${endpoint}`, require(`./api/${endpoint}Routes`))
+})
+
+// home page
+router.get('/', (req, res)=> {
+    // res.render(path => where are we rendering, obj => what are we rendering)
+    res.render('pages/home', {
+        title: 'Home',
+        name: 'My Hero Website'
+    })
+})
+
+// hero page => localhost:3000/heroes
+router.get('/heroes', (req, res)=> {
+
+    // make our fetch call 
+    const url = `http://localhost:${PORT}/api/hero`
+
+    axios.get(url).then(resp => {
+        res.render('pages/allHero', {
+            title: 'All Heroes',
+            name: 'All Heroes...and some villians too!',
+            data: resp.data
+        })
+    })
 })
 
 module.exports = router 
