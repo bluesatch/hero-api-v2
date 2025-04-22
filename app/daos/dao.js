@@ -17,8 +17,20 @@ const speciesDao = {
     ...require('./api/speciesDao')
 }
 
+const franchiseDao = {
+    ...daoCommon,
+    ...require('./api/franchiseDao')
+}
+
+const teamDao = {
+    ...daoCommon,
+    ...require('./api/teamDao')
+}
+
 module.exports = {
     heroDao,
     powerDao,
-    speciesDao
+    speciesDao,
+    franchiseDao,
+    teamDao
 }

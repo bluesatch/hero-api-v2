@@ -86,6 +86,8 @@ const heroDao = {
                                         }
                                     }
                                 )
+                            } else {
+                                console.log('DAO Error: ', error)
                             }
                         }
                     )
