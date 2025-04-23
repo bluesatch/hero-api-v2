@@ -10,6 +10,16 @@
                 </figure>
             </div>
             <div class="col-7 col-md-5">
+                <nav class="hero-navigation">
+                    <ul class="pagination">
+                        <% if (data.hero_id > 1) { %>
+                            <li class="page-item"><a href="/heroes/<%= data.hero_id - 1 %>" class="page-link">Previous</a></li>
+                        <% } %>
+                        <% if (data.hero_id < count) { %>
+                            <li class="page-item"><a href="/heroes/<%= data.hero_id + 1 %>" class="page-link">Next</a></li>
+                        <% } %>
+                    </ul>
+                </nav>
                 <% if (data.alias != null) { %>
                     <h2>Alias: <%= data.alias %></h2>
                 <% } %>

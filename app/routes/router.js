@@ -29,6 +29,12 @@ endpoints.forEach(endpoint => {
     router.use(`/api/${endpoint}`, require(`./api/${endpoint}Routes`))
 })
 
+// get heroCount
+let heroCount = 0
+
+axios.get(`http://localhost:${PORT}/api/hero/count`).then(resp => heroCount = resp.data.count)
+
+
 // home page
 router.get('/', (req, res)=> {
     // res.render(path => where are we rendering, obj => what are we rendering)
@@ -55,6 +61,8 @@ router.get('/heroes', (req, res)=> {
 
 router.get('/heroes/:id', (req, res)=> {
 
+    // console.log('heroCount: ', heroCount)
+
     const id = req.params.id
 
     const url = `http://localhost:${PORT}/api/hero/${id}`
@@ -68,10 +76,45 @@ router.get('/heroes/:id', (req, res)=> {
             res.render('pages/heroSingle', {
                 title: heroName,
                 name: heroName,
-                data: resp.data
+                data: resp.data,
+                count: heroCount
             })
         })
 
 })
+
+// powers
+
+router.get('/powers', (req, res)=> {
+
+    axios.get('http://localhost:3000/api/power')
+    .then(resp => {
+
+        // console.log(resp)
+        res.render('pages/allPower', {
+            title: 'Powers',
+            name: 'All of the Powers',
+            data: resp.data
+        })
+    })
+} )
+
+router.get('/powers/:power', (req, res)=> {
+
+    const power = req.params.power
+
+    const url = `http://localhost:${PORT}/api/power/pow/${power}`
+
+    axios.get(url)
+        .then(resp => {
+
+            res.render('pages/powerSingle', {
+                title: power,
+                name: power,
+                data: resp.data
+            })
+        })
+})
+
 
 module.exports = router 
