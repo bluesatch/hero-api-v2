@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+
+<main class="main" id="teamMain">
+    <div class="container">
+        <div class="row row-cols-2 row-cols-md-4">
+            <% data.forEach(item => { %>
+                <div class="col">
+                    <div class="card h-100 team-card">
+                        <div class="card-body">
+                            <h2 class="card-title">
+                                <%= item.team %>
+                            </h2>
+                        </div>
+                        <footer class="card-footer">
+                            <p class="card-footer-text">Click <a href="/team/<%= item.team %>" class="card-footer-link">here</a> to see heroes from this team!</p>
+                        </footer>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</main>
+
+<%- include('../partials/footer') %>

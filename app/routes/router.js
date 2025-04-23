@@ -154,5 +154,69 @@ router.get('/species/:species', (req, res)=> {
         })
 })
 
+router.get('/franchise', (req, res)=> {
+
+    const url = `http://localhost:${PORT}/api/franchise`
+
+    axios.get(url)
+        .then(resp => {
+            res.render('pages/allFranchise', {
+                title: 'Franchise',
+                name: 'All Franchises',
+                data: resp.data,
+                endpoints
+            })
+        })
+})
+
+router.get('/franchise/:franchise', (req, res)=> {
+
+    const franchise = req.params.franchise
+
+    const url = `http://localhost:${PORT}/api/franchise/fran/${franchise}`
+
+    axios.get(url)
+        .then(resp => {
+            res.render('pages/franchiseSingle', {
+                title: franchise,
+                name: franchise,
+                data: resp.data,
+                endpoints
+            })
+        })
+})
+
+router.get('/team', (req, res)=> {
+
+    const url = `http://localhost:${PORT}/api/team`
+
+    axios.get(url)
+        .then(resp => {
+            res.render('pages/allTeam', {
+                title: 'Team',
+                name: 'All Teams',
+                data: resp.data,
+                endpoints
+            })
+        })
+})
+
+router.get('/team/:team', (req, res)=> {
+
+    const team = req.params.team
+
+    const url = `http://localhost:${PORT}/api/team/team/${team}`
+
+    axios.get(url)
+        .then(resp => {
+            res.render('pages/teamSingle', {
+                title: team,
+                name: team,
+                data: resp.data,
+                endpoints
+            })
+        })
+})
+
 
 module.exports = router 
