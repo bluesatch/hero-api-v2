@@ -13,10 +13,10 @@
                 <nav class="hero-navigation">
                     <ul class="pagination">
                         <% if (data.hero_id > 1) { %>
-                            <li class="page-item"><a href="/heroes/<%= data.hero_id - 1 %>" class="page-link">Previous</a></li>
+                            <li class="page-item"><a href="/hero/<%= data.hero_id - 1 %>" class="page-link">Previous</a></li>
                         <% } %>
                         <% if (data.hero_id < count) { %>
-                            <li class="page-item"><a href="/heroes/<%= data.hero_id + 1 %>" class="page-link">Next</a></li>
+                            <li class="page-item"><a href="/hero/<%= data.hero_id + 1 %>" class="page-link">Next</a></li>
                         <% } %>
                     </ul>
                 </nav>
