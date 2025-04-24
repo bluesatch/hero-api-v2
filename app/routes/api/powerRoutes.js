@@ -12,7 +12,7 @@ router.get('/count', (req, res)=> {
     dao.countAll(res, dao.table)
 })
 
-router.get('/pow/:power', (req, res)=> {
+router.get('/power/:power', (req, res)=> {
     dao.findHeroesByPower(res, dao.table, req.params.power)
 })
 

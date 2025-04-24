@@ -12,7 +12,7 @@ router.get('/count', (req, res)=> {
     dao.countAll(res, dao.table)
 })
 
-router.get('/fran/:franchise', (req, res)=> {
+router.get('/franchise/:franchise', (req, res)=> {
     dao.findHeroesByFranchise(res, dao.table, req.params.franchise)
 })
 
