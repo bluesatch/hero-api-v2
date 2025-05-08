@@ -1,0 +1,277 @@
+<%- include('../partials/header') %>
+
+<main class="main" id="heroFormMain">
+    <div class="container">
+        <form action="" class="form" id="heroForm">
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="heroName" class="form-label text-capitalize">hero name</label>
+                    <input 
+                        type="text" 
+                        id="heroName" 
+                        name="hero_name" 
+                        class="form-control text-uppercase" 
+                    />
+                </div>
+                <div class="col">
+                    <label for="firstName" class="form-label text-capitalize">first name</label>
+                    <input 
+                        type="text" 
+                        id="firstName" 
+                        name="first_name" 
+                        class="form-control text-uppercase" 
+                    />
+                </div>
+                <div class="col">
+                    <label for="lastName" class="form-label text-capitalize">last name</label>
+                    <input 
+                        type="text" 
+                        id="lastName" 
+                        name="last_name" 
+                        class="form-control text-uppercase" 
+                    />
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-3">
+                    <label for="alias" class="form-label text-capitalize">alias</label>
+                    <input 
+                        type="text" 
+                        id="alias" 
+                        name="alias" 
+                        class="form-control text-uppercase" 
+                    />
+                </div>
+                <div class="col-9">
+                    <p class="form-text">Franchise: </p>
+                    <div class="radio-div d-flex flex-wrap justify-content-around mb-3">
+                        <div class="form-check">
+                            <input 
+                                type="radio" 
+                                class="form-check-input" 
+                                name="franchise_id" 
+                                value="1" 
+                                id="dc"
+                            />
+                            <label for="dc" class="form-check-label">DC</label>
+                        </div>
+                        <div class="form-check">
+                            <input 
+                                type="radio" 
+                                class="form-check-input" 
+                                name="franchise_id" 
+                                value="2" 
+                                id="idw"
+                            />
+                            <label for="idw" class="form-check-label">IDW</label>
+                        </div>
+                        <div class="form-check">
+                            <input 
+                                type="radio" 
+                                class="form-check-input" 
+                                name="franchise_id" 
+                                value="3" 
+                                id="image"
+                            />
+                            <label for="image" class="form-check-label">IMAGE</label>
+                        </div>
+                        <div class="form-check">
+                            <input 
+                                type="radio" 
+                                class="form-check-input" 
+                                name="franchise_id" 
+                                value="4" 
+                                id="marvel"
+                            />
+                            <label for="marvel" class="form-check-label">MARVEL</label>
+                        </div>
+                        <div class="form-check">
+                            <input 
+                                type="radio" 
+                                class="form-check-input" 
+                                name="franchise_id" 
+                                value="5" 
+                                id="mirage"
+                            />
+                            <label for="mirage" class="form-check-label">MIRAGE</label>
+                        </div>
+                        <div class="form-check">
+                            <input 
+                                type="radio" 
+                                class="form-check-input" 
+                                name="franchise_id" 
+                                value="6" 
+                                id="skybound"
+                            />
+                            <label for="skybound" class="form-check-label">SKYBOUND</label>
+                        </div>
+                    </div>
+                    <p class="form-text">Species:</p>
+                    <div class="radio-div d-flex flex-wrap justify-content-around mb-3">
+                        <div class="form-check">
+                            <input 
+                                type="radio" 
+                                class="form-check-input" 
+                                name="species_id" 
+                                value="1" 
+                                id="alien"
+                            />
+                            <label for="alien" class="form-check-label">ALIEN</label>
+                        </div>
+                        <div class="form-check">
+                            <input 
+                                type="radio" 
+                                class="form-check-input" 
+                                name="species_id" 
+                                value="2" 
+                                id="beast"
+                            />
+                            <label for="beast" class="form-check-label">BEAST</label>
+                        </div>
+                        <div class="form-check">
+                            <input 
+                                type="radio" 
+                                class="form-check-input" 
+                                name="species_id" 
+                                value="3" 
+                                id="god"
+                            />
+                            <label for="god" class="form-check-label">GOD</label>
+                        </div>
+                        <div class="form-check">
+                            <input 
+                                type="radio" 
+                                class="form-check-input" 
+                                name="species_id" 
+                                value="4" 
+                                id="hellspawn"
+                            />
+                            <label for="hellspawn" class="form-check-label">HELLSPAWN</label>
+                        </div>
+                        <div class="form-check">
+                            <input 
+                                type="radio" 
+                                class="form-check-input" 
+                                name="species_id" 
+                                value="5" 
+                                id="human"
+                            />
+                            <label for="human" class="form-check-label">HUMAN</label>
+                        </div>
+                        <div class="form-check">
+                            <input 
+                                type="radio" 
+                                class="form-check-input" 
+                                name="species_id" 
+                                value="6" 
+                                id="humanoid"
+                            />
+                            <label for="humanoid" class="form-check-label">HUMANOID</label>
+                        </div>
+                        <div class="form-check">
+                            <input 
+                                type="radio" 
+                                class="form-check-input" 
+                                name="species_id" 
+                                value="7" 
+                                id="mutant"
+                            />
+                            <label for="mutant" class="form-check-label">MUTANT</label>
+                        </div>
+                        <div class="form-check">
+                            <input 
+                                type="radio" 
+                                class="form-check-input" 
+                                name="species_id" 
+                                value="8" 
+                                id="mutate"
+                            />
+                            <label for="mutate" class="form-check-label">MUTATE</label>
+                        </div>
+                        <div class="form-check">
+                            <input 
+                                type="radio" 
+                                class="form-check-input" 
+                                name="species_id" 
+                                value="9" 
+                                id="cyborg"
+                            />
+                            <label for="cyborg" class="form-check-label">CYBORG</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="placeOfOrigin" class="form-label text-capitalize">
+                        place of origin 
+                    </label>
+                    <input 
+                        type="text" 
+                        id="placeOfOrigin" 
+                        name="place_of_origin" 
+                        class="form-control text-uppercase" 
+                    />
+                </div>
+                <div class="col">
+                    <label for="firstApp" class="form-label text-capitalize">
+                        first appearance 
+                    </label>
+                    <input 
+                        type="number" 
+                        id="firstApp" 
+                        name="first_app" 
+                        min="1901"
+                        max="2155"
+                        step="1"
+                        class="form-control text-uppercase" 
+                    />
+                </div>
+                <div class="col">
+                    <p class="form-text">Alignment:</p>
+                    <div class="radio-div d-flex flex-wrap justify-content-around">
+                        <div class="form-check">
+                            <input 
+                                type="radio" 
+                                class="form-check-input" 
+                                name="alignment" 
+                                value="HERO" 
+                                id="hero"
+                            />
+                            <label for="hero" class="form-check-label">HERO</label>
+                        </div>
+                        <div class="form-check">
+                            <input 
+                                type="radio" 
+                                class="form-check-input" 
+                                name="alignment" 
+                                value="ANTIHERO" 
+                                id="antihero"
+                            />
+                            <label for="antihero" class="form-check-label">ANTIHERO</label>
+                        </div>
+                        <div class="form-check">
+                            <input 
+                                type="radio" 
+                                class="form-check-input" 
+                                name="alignment" 
+                                value="VILLAIN" 
+                                id="villain"
+                            />
+                            <label for="villain" class="form-check-label">VILLAIN</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="imgUrl" class="form-label">Hero Image:</label>
+                <input type="file" class="form-control" id="imgUrl" name="img_url" />
+            </div>
+            <button class="btn-primary btn" type="submit" role="button">
+                    Add Hero
+            </button>
+        </form>
+    </div>
+</main>
+
+<%- include('../partials/footer') %>

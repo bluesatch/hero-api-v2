@@ -47,6 +47,15 @@ router.get('/', (req, res)=> {
     })
 })
 
+// heroForm 
+router.get('/heroForm', (req, res)=> {
+    res.render('pages/heroForm', {
+        title: 'Hero Form',
+        name: 'Add a Hero',
+        endpoints
+    })
+})
+
 for (let i = 0; i < endpoints.length; i++) {
     //  do stuff
     const endpoint = endpoints[i]
@@ -86,7 +95,7 @@ for (let i = 0; i < endpoints.length; i++) {
                     })
                 })
         })
-    } else {
+    } else if (endpoints.includes(endpoint)) {
         router.get(`/${endpoint}`, (req, res)=> {
 
             const url = `http://localhost:${PORT}/api/${endpoint}`
@@ -119,7 +128,19 @@ for (let i = 0; i < endpoints.length; i++) {
                     })
                 })
         })
+    } else {
+        // 404 error => any path not listed above
+        router.all('/{*any}', (req, res)=> {
+            // res.send('<h1>404 Error. This page does not exist.</h1>')
+            res.render('pages/404', {
+                title: '404 Error',
+                name: '404 Error',
+                endpoints
+            })
+        })
+
     }
+
 
 }
 
