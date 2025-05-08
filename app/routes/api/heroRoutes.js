@@ -27,6 +27,7 @@ router.get('/:id', (req, res)=> {
     dao.findHeroById(res, dao.table, req.params.id)
 })
 
+// localhost:3000/api/hero/post
 router.post('/post', (req, res)=> {
     dao.create(req, res, dao.table)
 })
